@@ -1,8 +1,7 @@
 @extends('layouts.main');
 
 @section('container')
-<div class="container">
-    <h2 class="mb-4">Halaman {{ $title }}</h2>
+    <h2>Halaman {{ $title }}</h2>
     <form>
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -19,5 +18,4 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
-</div>
 @endsection

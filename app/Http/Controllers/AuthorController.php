@@ -12,7 +12,7 @@ class AuthorController extends Controller
     {
         return view('posts', [
             "title" => "All Post",
-            "posts" => Post::latest()->get()
+            "posts" => Post::with(['author', 'category'])->latest()->get()
             // "posts" => Post::all()
         ]);
     }
@@ -21,7 +21,7 @@ class AuthorController extends Controller
     {
         return view('posts', [
             'title' => "Post Author By : $author->name",
-            'posts' => $author->posts,
+            'posts' => $author->posts->load(['author', 'category']),
         ]);
     }
 }

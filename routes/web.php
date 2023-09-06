@@ -51,10 +51,11 @@ Route::get('/categories', function () {
 
 Route::get('/categories/{category:slug}', function (Category $category) {
     return view('category', [
-        'title' => $category->name,
+        'title' => "Posy Category BY : $category->name",
         'posts' => $category->posts,
         'category' => $category->name
     ]);
 });
 
-Route::get('/authors/{user:username}', [AuthorController::class, 'show']);
+Route::get('/posts', [AuthorController::class, 'index']);
+Route::get('/authors/{author:username}', [AuthorController::class, 'show']);

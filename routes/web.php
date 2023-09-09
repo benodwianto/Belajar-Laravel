@@ -49,12 +49,9 @@ Route::get('/categories', function () {
     ]);
 });
 
-Route::get('/categories/{category:slug}', function (Category $category) {
-    return view('posts', [
-        'title' => "Post Category BY : $category->name",
-        'posts' => $category->posts->load(['author', 'category'])
-    ]);
-});
-
-Route::get('/posts1', [AuthorController::class, 'index']);
-Route::get('/authors/{author:username}', [AuthorController::class, 'show']);
+// Route::get('/categories/{category:slug}', function (Category $category) {
+//     return view('posts', [
+//         'title' => "Post Category BY : $category->name",
+//         'posts' => $category->posts->load(['author', 'category'])
+//     ]);
+// });

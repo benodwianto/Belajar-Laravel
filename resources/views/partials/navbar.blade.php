@@ -22,6 +22,11 @@
             <a class="nav-link {{ ($title === "Post Categories") ? 'active' : '' }}" href="/categories">Categories</a>
           </li>
         </ul>
+        <ul class="navbar-nav ms-auto">
+          <li>
+            <a class="nav-link" href="/login"><i class="bi bi-box-arrow-in-right"></i> Sign In</a>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>

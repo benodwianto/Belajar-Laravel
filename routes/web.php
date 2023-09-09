@@ -56,5 +56,5 @@ Route::get('/categories/{category:slug}', function (Category $category) {
     ]);
 });
 
-Route::get('/posts', [AuthorController::class, 'index']);
+Route::get('/posts1', [AuthorController::class, 'index']);
 Route::get('/authors/{author:username}', [AuthorController::class, 'show']);

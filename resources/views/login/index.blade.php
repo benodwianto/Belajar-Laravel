@@ -24,16 +24,16 @@
               <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
           
               <div class="form-floating">
-                <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="name@example.com" name="email" required value="{{ old('email') }}">
+                <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="name@example.com" name="email" value="{{ old('email') }}">
                 <label for="email">Email address</label>
               </div>
               @error('email')
-                <div class="invalid-feedback">
+                <div class="is-invalid">
                   {{ $message }}
                 </div>
-              @enderror
+                @enderror
               <div class="form-floating">
-                <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
+                <input type="password" class="form-control" id="password" placeholder="Password" name="password" >
                 <label for="password">Password</label>
               </div>
               <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>

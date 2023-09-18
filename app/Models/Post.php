@@ -6,6 +6,7 @@ use Cviebrock\EloquentSluggable\Sluggable;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Post extends Model
 {
@@ -14,6 +15,8 @@ class Post extends Model
     // protected $fillable = ['title', 'excerpt', 'body'];
     protected $guarded = ['id'];
     protected $with = ['author', 'category'];
+
+    public $appends = ['image_path'];
 
     public function scopeFilter($query, array $filters)
     {
@@ -63,5 +66,10 @@ class Post extends Model
                 'source' => 'title'
             ]
         ];
+    }
+
+    public function getImagePathAttribute()
+    {
+        return Storage::url($this->image);
     }
 }
